@@ -88,7 +88,7 @@ pipeline {
 		oc new-app --name ${APP_NAME} -i ${APP_NAME}:latest 
                 // TODO: Expose the ${APP_NAME} service for external access
 		oc expose service ${APP_NAME}
-		'''
+		 '''
             }
         }
 
@@ -135,8 +135,8 @@ pipeline {
 		sh'''
 		oc project ${STAGE_PROJECT}
 		oc new-app --name ${APP_NAME} -i ${APP_NAME}:stage
-		oc expose service ${APP_NAME}
-		'''
+		oc expose service/${APP_NAME}
+		 '''
             }
         }
 
